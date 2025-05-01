@@ -1,0 +1,173 @@
+
+import React from 'react';
+import Layout from '../components/layout/Layout';
+
+const About = () => {
+  const teamMembers = [
+    {
+      name: "Ananya Sharma",
+      role: "Founder & Tech Lead",
+      bio: "Electronics engineer with 8+ years of experience in robotics and embedded systems.",
+      image: "/lovable-uploads/a123894c-43b6-4147-848d-1a4fe2c44244.png"
+    },
+    {
+      name: "Priya Patel",
+      role: "Workshop Coordinator",
+      bio: "Passionate educator with expertise in technology curriculum development and hands-on learning.",
+      image: "/lovable-uploads/eecb036d-e342-43d8-a2ee-c351429fbd81.png"
+    },
+    {
+      name: "Vikram Narayan",
+      role: "Hardware Specialist",
+      bio: "Mechanical engineer with a focus on 3D printing, prototyping, and manufacturing technologies.",
+      image: "/lovable-uploads/abe14db0-4252-4aa4-861f-9c47f2201058.png"
+    }
+  ];
+
+  return (
+    <Layout>
+      {/* Hero Section */}
+      <section className="pt-28 pb-10 bg-gradient-to-b from-proto-purple to-white">
+        <div className="container mx-auto px-4 md:px-6">
+          <div className="text-center max-w-3xl mx-auto">
+            <h1 className="text-4xl md:text-5xl font-bold text-proto-navy mb-4">About Protobots</h1>
+            <p className="text-xl text-gray-700">
+              Building the future through technology and innovation
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Mission & Story */}
+      <section className="py-16">
+        <div className="container mx-auto px-4 md:px-6">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div className="order-2 lg:order-1">
+              <h2 className="text-3xl font-bold text-proto-navy mb-6">Our Mission</h2>
+              <p className="text-lg text-gray-700 mb-6">
+                At Protobots, we're committed to democratizing access to technology education and resources. 
+                We aim to foster a community of innovators in Bangalore by providing affordable, high-quality 
+                workshops, components, and workspace facilities.
+              </p>
+              <p className="text-lg text-gray-700 mb-6">
+                We believe that hands-on experience is the best teacher, which is why all our services are 
+                designed to give you practical skills you can immediately apply to your projects.
+              </p>
+              <h2 className="text-3xl font-bold text-proto-navy mb-6 mt-12">Our Story</h2>
+              <p className="text-lg text-gray-700">
+                Protobots was founded in 2023 by a group of engineers and educators who saw a need for 
+                accessible technology resources in Bangalore. What started as a small workshop space has 
+                grown into a comprehensive innovation hub that serves students, hobbyists, and professionals alike.
+              </p>
+            </div>
+
+            <div className="order-1 lg:order-2">
+              <div className="relative">
+                <img 
+                  src="/lovable-uploads/d9619f6f-17ea-469f-9394-83f831894b00.png" 
+                  alt="Robot at Protobots" 
+                  className="rounded-xl shadow-xl w-full h-auto"
+                />
+                <div className="absolute -bottom-5 -right-5 bg-proto-cyan rounded-lg p-4 shadow-lg hidden md:block">
+                  <p className="text-white font-medium">Innovation in action</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Team Section */}
+      <section className="py-16 bg-gray-50">
+        <div className="container mx-auto px-4 md:px-6">
+          <div className="text-center max-w-3xl mx-auto mb-12">
+            <h2 className="text-3xl font-bold text-proto-navy mb-4">Our Team</h2>
+            <p className="text-lg text-gray-700">
+              Meet the passionate experts behind Protobots
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {teamMembers.map((member, index) => (
+              <div 
+                key={index} 
+                className="bg-white rounded-xl shadow-lg overflow-hidden transition-transform duration-300 hover:-translate-y-1"
+              >
+                <div className="h-80 overflow-hidden">
+                  <img 
+                    src={member.image} 
+                    alt={member.name} 
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <div className="p-6">
+                  <h3 className="text-xl font-bold text-proto-navy mb-1">{member.name}</h3>
+                  <p className="text-proto-cyan font-medium mb-3">{member.role}</p>
+                  <p className="text-gray-600">{member.bio}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Values */}
+      <section className="py-16">
+        <div className="container mx-auto px-4 md:px-6">
+          <div className="text-center max-w-3xl mx-auto mb-12">
+            <h2 className="text-3xl font-bold text-proto-navy mb-4">Our Values</h2>
+            <p className="text-lg text-gray-700">
+              The principles that guide everything we do
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="bg-white p-8 rounded-xl shadow-md border-t-4 border-proto-cyan">
+              <h3 className="text-xl font-bold text-proto-navy mb-3">Innovation</h3>
+              <p className="text-gray-600">
+                We constantly push the boundaries of what's possible, embracing new technologies and methodologies.
+              </p>
+            </div>
+
+            <div className="bg-white p-8 rounded-xl shadow-md border-t-4 border-proto-orange">
+              <h3 className="text-xl font-bold text-proto-navy mb-3">Accessibility</h3>
+              <p className="text-gray-600">
+                We believe technology education and resources should be available to everyone, regardless of background.
+              </p>
+            </div>
+
+            <div className="bg-white p-8 rounded-xl shadow-md border-t-4 border-green-500">
+              <h3 className="text-xl font-bold text-proto-navy mb-3">Community</h3>
+              <p className="text-gray-600">
+                We foster a collaborative environment where knowledge sharing and mutual support are encouraged.
+              </p>
+            </div>
+
+            <div className="bg-white p-8 rounded-xl shadow-md border-t-4 border-purple-500">
+              <h3 className="text-xl font-bold text-proto-navy mb-3">Sustainability</h3>
+              <p className="text-gray-600">
+                We prioritize environmentally responsible practices in our operations and project designs.
+              </p>
+            </div>
+
+            <div className="bg-white p-8 rounded-xl shadow-md border-t-4 border-blue-500">
+              <h3 className="text-xl font-bold text-proto-navy mb-3">Quality</h3>
+              <p className="text-gray-600">
+                We deliver excellence in every aspect of our services, from components to education.
+              </p>
+            </div>
+
+            <div className="bg-white p-8 rounded-xl shadow-md border-t-4 border-amber-500">
+              <h3 className="text-xl font-bold text-proto-navy mb-3">Hands-on Learning</h3>
+              <p className="text-gray-600">
+                We believe in practical, experiential learning as the most effective way to develop skills.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </Layout>
+  );
+};
+
+export default About;
