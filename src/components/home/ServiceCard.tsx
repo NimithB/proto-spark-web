@@ -46,7 +46,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
     e.preventDefault();
     
     // Format the message for WhatsApp
-    const formattedMessage = `Hi Protobots! I'm interested in ${title}. ${message}`;
+    const formattedMessage = `Hi Protobots! I'm interested in ${title}.\n\nName: ${name}\n\nMessage: ${message}`;
     const encodedMessage = encodeURIComponent(formattedMessage);
     
     // Redirect to WhatsApp with the pre-filled message
@@ -91,7 +91,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
                 id="name"
                 value={name}
                 onChange={(e) => setName(e.target.value)}
-                placeholder="John Doe"
+                placeholder="Name"
                 required
               />
             </div>

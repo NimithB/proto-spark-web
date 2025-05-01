@@ -4,6 +4,7 @@ import Layout from '../components/layout/Layout';
 import HeroSection from '../components/home/HeroSection';
 import ServicesSection from '../components/home/ServicesSection';
 import FeaturesSection from '../components/home/FeaturesSection';
+import '../styles/custom-cursor.css';
 
 const Index = () => {
   useEffect(() => {

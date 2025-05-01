@@ -77,7 +77,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ redirectToWhatsApp = true }) 
             name="name"
             value={formData.name}
             onChange={handleChange}
-            placeholder="John Doe"
+            placeholder="Name"
             required
           />
         </div>
@@ -92,7 +92,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ redirectToWhatsApp = true }) 
             type="email"
             value={formData.email}
             onChange={handleChange}
-            placeholder="john@example.com"
+            placeholder="email@example.com"
             required
           />
         </div>

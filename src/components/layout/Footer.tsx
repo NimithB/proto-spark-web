@@ -15,10 +15,11 @@ const Footer: React.FC = () => {
                 Proto<span className="text-proto-cyan">bots</span>
               </span>
             </Link>
-            <p className="text-gray-300 mb-6">
+            <p className="text-gray-300 mb-2">
               Bangalore-based tech startup offering innovation-focused services, 
               electronics component sales, prototyping, and workshop space rentals.
             </p>
+            <p className="text-gray-400 mb-6 text-sm">Established in 2025</p>
             <div className="flex space-x-4">
               <a 
                 href="https://www.instagram.com/proto_bots?igsh=ZzBmd3dtamZ6bzN1" 

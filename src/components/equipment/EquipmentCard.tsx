@@ -54,11 +54,11 @@ const EquipmentCard: React.FC<EquipmentCardProps> = ({
     
     // Format the message for WhatsApp
     const purposeText = formData.purpose === 'rent' ? 'rent' : 'buy';
-    const formattedMessage = `Hi Protobots! I'm interested in ${purposeText}ing the ${name}. ${formData.message}`;
+    const formattedMessage = `Hi Protobots! I'm interested in ${purposeText}ing the ${name}.\n\nName: ${formData.name}\n\nMessage: ${formData.message}`;
     const encodedMessage = encodeURIComponent(formattedMessage);
     
     // Redirect to WhatsApp with the pre-filled message
-    window.open(`https://wa.me/qr/PHY6KG77QAUTD1?text=${encodedMessage}`, '_blank');
+    window.open(`https://wa.me/message/7WIBMBJGEKSSI1?text=${encodedMessage}`, '_blank');
     
     // Close the dialog
     setIsDialogOpen(false);
@@ -103,7 +103,7 @@ const EquipmentCard: React.FC<EquipmentCardProps> = ({
                 name="name"
                 value={formData.name}
                 onChange={handleChange}
-                placeholder="John Doe"
+                placeholder="Name"
                 required
               />
             </div>
