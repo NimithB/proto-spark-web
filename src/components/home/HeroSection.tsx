@@ -29,12 +29,19 @@ const HeroSection: React.FC = () => {
 
           <div className="flex justify-center">
             <div className="relative w-full max-w-md">
-              {/* Main drone image */}
-              <img 
-                src="/lovable-uploads/ff070ae4-d920-402f-833c-1b4b76835799.png"
-                alt="Protobots Drone" 
-                className="w-full h-auto animate-drone-hover filter drop-shadow-xl"
-              />
+              {/* 3D Drone model */}
+              <model-viewer
+                src="/models/drone.glb"
+                alt="3D Drone Model"
+                auto-rotate
+                camera-controls
+                shadow-intensity="1"
+                class="w-full h-80 md:h-96"
+                style={{
+                  '--poster-color': 'transparent',
+                  background: 'transparent',
+                }}
+              ></model-viewer>
               
               {/* Decorative tech elements */}
               <div className="absolute top-1/4 -left-10 w-16 h-16 bg-proto-cyan rounded-full opacity-20 animate-pulse-glow blur-lg"></div>

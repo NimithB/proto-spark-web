@@ -5,22 +5,28 @@ import Layout from '../components/layout/Layout';
 const About = () => {
   const teamMembers = [
     {
-      name: "Ananya Sharma",
-      role: "Founder & Tech Lead",
-      bio: "Electronics engineer with 8+ years of experience in robotics and embedded systems.",
+      name: "Sai Vivek",
+      role: "Founder",
+      bio: "Passionate entrepreneur with expertise in robotics and innovation.",
+      image: "/lovable-uploads/abe14db0-4252-4aa4-861f-9c47f2201058.png"
+    },
+    {
+      name: "Aishwarya",
+      role: "Co-founder",
+      bio: "Electronics specialist with a background in advanced prototyping and development.",
       image: "/lovable-uploads/a123894c-43b6-4147-848d-1a4fe2c44244.png"
     },
     {
-      name: "Priya Patel",
-      role: "Workshop Coordinator",
-      bio: "Passionate educator with expertise in technology curriculum development and hands-on learning.",
+      name: "Chandhana",
+      role: "Logistics Lead",
+      bio: "Expert in supply chain management and workshop coordination.",
       image: "/lovable-uploads/eecb036d-e342-43d8-a2ee-c351429fbd81.png"
     },
     {
-      name: "Vikram Narayan",
-      role: "Hardware Specialist",
-      bio: "Mechanical engineer with a focus on 3D printing, prototyping, and manufacturing technologies.",
-      image: "/lovable-uploads/abe14db0-4252-4aa4-861f-9c47f2201058.png"
+      name: "Nimith",
+      role: "Software Lead",
+      bio: "Programming expert specializing in robotics software and embedded systems.",
+      image: "/lovable-uploads/d9619f6f-17ea-469f-9394-83f831894b00.png"
     }
   ];
 
@@ -64,7 +70,7 @@ const About = () => {
             <div className="order-1 lg:order-2">
               <div className="relative">
                 <img 
-                  src="/lovable-uploads/d9619f6f-17ea-469f-9394-83f831894b00.png" 
+                  src="/lovable-uploads/ff070ae4-d920-402f-833c-1b4b76835799.png" 
                   alt="Robot at Protobots" 
                   className="rounded-xl shadow-xl w-full h-auto"
                 />
@@ -87,13 +93,13 @@ const About = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {teamMembers.map((member, index) => (
               <div 
                 key={index} 
                 className="bg-white rounded-xl shadow-lg overflow-hidden transition-transform duration-300 hover:-translate-y-1"
               >
-                <div className="h-80 overflow-hidden">
+                <div className="h-64 overflow-hidden">
                   <img 
                     src={member.image} 
                     alt={member.name} 

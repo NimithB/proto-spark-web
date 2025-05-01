@@ -1,5 +1,6 @@
 
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Dialog } from '@/components/ui/dialog';
 import {
   DialogContent,
@@ -17,17 +18,29 @@ interface ServiceCardProps {
   description: string;
   icon: React.ReactNode;
   bgColor: string;
+  path: string;
 }
 
 const ServiceCard: React.FC<ServiceCardProps> = ({
   title,
   description,
   icon,
-  bgColor
+  bgColor,
+  path
 }) => {
+  const navigate = useNavigate();
   const [isDialogOpen, setIsDialogOpen] = useState(false);
   const [name, setName] = useState('');
   const [message, setMessage] = useState('');
+
+  const handleCardClick = (e: React.MouseEvent) => {
+    navigate(path);
+  };
+
+  const handleEnquireClick = (e: React.MouseEvent) => {
+    e.stopPropagation(); // Stop card click navigation
+    setIsDialogOpen(true);
+  };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -37,7 +50,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
     const encodedMessage = encodeURIComponent(formattedMessage);
     
     // Redirect to WhatsApp with the pre-filled message
-    window.open(`https://wa.me/qr/PHY6KG77QAUTD1?text=${encodedMessage}`, '_blank');
+    window.open(`https://wa.me/message/7WIBMBJGEKSSI1?text=${encodedMessage}`, '_blank');
     
     // Close the dialog
     setIsDialogOpen(false);
@@ -45,14 +58,14 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
 
   return (
     <>
-      <div className={`service-card relative group`}>
+      <div className={`service-card relative group cursor-pointer`} onClick={handleCardClick}>
         <div className={`absolute top-0 left-0 w-full h-1 ${bgColor} rounded-t-xl`}></div>
         <div className="pt-4">
           <div className="mb-4 text-proto-cyan">{icon}</div>
           <h3 className="text-xl font-bold mb-2">{title}</h3>
           <p className="text-gray-600 mb-6">{description}</p>
           <button
-            onClick={() => setIsDialogOpen(true)}
+            onClick={handleEnquireClick}
             className="btn-outline text-sm"
           >
             Select & Enquire

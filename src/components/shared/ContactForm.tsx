@@ -38,7 +38,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ redirectToWhatsApp = true }) 
         const encodedMessage = encodeURIComponent(formattedMessage);
         
         // Redirect to WhatsApp with the pre-filled message
-        window.open(`https://wa.me/qr/PHY6KG77QAUTD1?text=${encodedMessage}`, '_blank');
+        window.open(`https://wa.me/message/7WIBMBJGEKSSI1?text=${encodedMessage}`, '_blank');
       } else {
         // For future implementation if needed
         toast({

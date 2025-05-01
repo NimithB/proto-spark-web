@@ -33,8 +33,8 @@ const Contact = () => {
                   <div>
                     <h3 className="font-medium text-lg">Address</h3>
                     <p className="text-gray-600">
-                      123 Tech Park, Koramangala<br />
-                      Bangalore, Karnataka 560034<br />
+                      6/2 C.Ramaiah layout, Ramchandrapura Main Rd<br />
+                      Vidyaranyapura Post, Bengaluru, Karnataka 560097<br />
                       India
                     </p>
                   </div>
@@ -67,7 +67,7 @@ const Contact = () => {
                   Get quick responses to your queries through our WhatsApp support.
                 </p>
                 <a 
-                  href="https://wa.me/qr/PHY6KG77QAUTD1" 
+                  href="https://wa.me/message/7WIBMBJGEKSSI1" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="inline-block bg-proto-cyan text-white px-5 py-2.5 rounded-lg font-medium hover:bg-opacity-90 transition-colors"
@@ -81,7 +81,7 @@ const Contact = () => {
                 <h3 className="font-bold text-lg text-proto-navy mb-4">Follow Us</h3>
                 <div className="flex space-x-4">
                   <a 
-                    href="https://instagram.com" 
+                    href="https://www.instagram.com/proto_bots?igsh=ZzBmd3dtamZ6bzN1" 
                     target="_blank" 
                     rel="noopener noreferrer" 
                     className="bg-gray-100 hover:bg-gray-200 p-3 rounded-full transition-colors"
@@ -90,7 +90,7 @@ const Contact = () => {
                     <Instagram size={24} className="text-proto-navy" />
                   </a>
                   <a 
-                    href="https://facebook.com" 
+                    href="https://www.facebook.com/share/1AwEhTVWkP" 
                     target="_blank" 
                     rel="noopener noreferrer" 
                     className="bg-gray-100 hover:bg-gray-200 p-3 rounded-full transition-colors"
@@ -119,7 +119,7 @@ const Contact = () => {
           <h2 className="text-2xl font-bold text-proto-navy mb-6">Location</h2>
           <div className="rounded-xl overflow-hidden shadow-lg h-96">
             <iframe 
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d62207.74920253425!2d77.58042797073406!3d12.972077456031261!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae1670c9b44e6d%3A0xf8dfc3e8517e4fe0!2sBengaluru%2C%20Karnataka!5e0!3m2!1sen!2sin!4v1658566958209!5m2!1sen!2sin"
+              src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15548.66633357926!2d77.5563937!3d13.0772842!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae1af3aa89c085%3A0x7b2f378b91dae97f!2sRamachandrapura%20Main%20Road%2C%20Bangalore%2C%20Karnataka!5e0!3m2!1sen!2sin!4v1714347676772!5m2!1sen!2sin"
               width="100%" 
               height="100%" 
               style={{ border: 0 }} 

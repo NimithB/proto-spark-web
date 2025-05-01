@@ -21,7 +21,7 @@ const Footer: React.FC = () => {
             </p>
             <div className="flex space-x-4">
               <a 
-                href="https://instagram.com" 
+                href="https://www.instagram.com/proto_bots?igsh=ZzBmd3dtamZ6bzN1" 
                 target="_blank" 
                 rel="noopener noreferrer" 
                 className="text-white hover:text-proto-cyan transition-colors"
@@ -30,7 +30,7 @@ const Footer: React.FC = () => {
                 <Instagram size={24} />
               </a>
               <a 
-                href="https://facebook.com" 
+                href="https://www.facebook.com/share/1AwEhTVWkP" 
                 target="_blank" 
                 rel="noopener noreferrer" 
                 className="text-white hover:text-proto-cyan transition-colors"
@@ -39,7 +39,7 @@ const Footer: React.FC = () => {
                 <Facebook size={24} />
               </a>
               <a 
-                href="https://wa.me/qr/PHY6KG77QAUTD1" 
+                href="https://wa.me/message/7WIBMBJGEKSSI1" 
                 target="_blank" 
                 rel="noopener noreferrer" 
                 className="text-white hover:text-proto-cyan transition-colors"
@@ -86,10 +86,10 @@ const Footer: React.FC = () => {
           <div>
             <h3 className="text-xl font-bold mb-4">Contact Us</h3>
             <address className="not-italic text-gray-300">
-              <p className="mb-2">Bangalore, India</p>
+              <p className="mb-2">6/2 C.Ramaiah layout, Bengaluru</p>
               <p className="mb-2">Email: info@protobots.in</p>
               <a 
-                href="https://wa.me/qr/PHY6KG77QAUTD1" 
+                href="https://wa.me/message/7WIBMBJGEKSSI1" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="inline-block text-proto-cyan hover:underline mt-4"
