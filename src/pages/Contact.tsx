@@ -52,7 +52,7 @@ const Contact = () => {
                   <Mail className="text-proto-cyan flex-shrink-0 mt-1" size={24} />
                   <div>
                     <h3 className="font-medium text-lg">Email</h3>
-                    <p className="text-gray-600">info@protobots.in</p>
+                    <p className="text-gray-600">protobots.services@gmail.com</p>
                   </div>
                 </div>
               </div>

@@ -87,7 +87,7 @@ const Footer: React.FC = () => {
             <h3 className="text-xl font-bold mb-4">Contact Us</h3>
             <address className="not-italic text-gray-300">
               <p className="mb-2">6/2 C.Ramaiah layout, Bengaluru</p>
-              <p className="mb-2">Email: info@protobots.in</p>
+              <p className="mb-2">Email: protobots.services@gmail.com</p>
               <a 
                 href="https://wa.me/message/7WIBMBJGEKSSI1" 
                 target="_blank" 
