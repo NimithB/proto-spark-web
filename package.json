@@ -4,7 +4,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://NimithB.github.io/proto-spark-web",
+  "homepage": "https://nimithb.github.io/proto-spark-web",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
