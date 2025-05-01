@@ -1,37 +1,11 @@
 
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { ArrowRight } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 
 const HeroSection: React.FC = () => {
   const navigate = useNavigate();
-  const [isModelLoaded, setIsModelLoaded] = useState(false);
   const [isDroneHovered, setIsDroneHovered] = useState(false);
-
-  useEffect(() => {
-    // Custom cursor for drone interaction
-    const cursor = document.createElement('div');
-    cursor.classList.add('custom-cursor');
-    document.body.appendChild(cursor);
-
-    const updateCursor = (e: MouseEvent) => {
-      cursor.style.left = `${e.clientX}px`;
-      cursor.style.top = `${e.clientY}px`;
-    };
-
-    document.addEventListener('mousemove', updateCursor);
-
-    return () => {
-      document.removeEventListener('mousemove', updateCursor);
-      if (document.body.contains(cursor)) {
-        document.body.removeChild(cursor);
-      }
-    };
-  }, []);
-
-  const handleDroneLoad = () => {
-    setIsModelLoaded(true);
-  };
 
   const handleServiceClick = () => {
     const servicesSection = document.getElementById('services');
@@ -81,28 +55,14 @@ const HeroSection: React.FC = () => {
               onMouseEnter={() => setIsDroneHovered(true)}
               onMouseLeave={() => setIsDroneHovered(false)}
             >
-              {/* 3D Drone model */}
-              <model-viewer
-                src="/models/drone.glb"
-                alt="3D Drone Model"
-                auto-rotate
-                camera-controls
-                shadow-intensity="1"
-                camera-orbit={isDroneHovered ? "0deg 55deg 2.5m" : "0deg 75deg 2.8m"}
-                rotation-speed={isDroneHovered ? "1.5" : "0.5"}
-                className="w-full h-80 md:h-96"
-                style={{
-                  background: 'transparent',
-                }}
-                onLoad={handleDroneLoad}
-              ></model-viewer>
-              
-              {/* Loading indicator */}
-              {!isModelLoaded && (
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-proto-cyan"></div>
-                </div>
-              )}
+              {/* Drone PNG Image with hover animation */}
+              <div className={`transition-all duration-500 ${isDroneHovered ? 'scale-110 -translate-y-4' : ''}`}>
+                <img 
+                  src="/models/drone.png" 
+                  alt="Drone" 
+                  className="w-full h-auto drop-shadow-2xl"
+                />
+              </div>
               
               {/* Decorative tech elements */}
               <div className="absolute top-1/4 -left-10 w-16 h-16 bg-proto-cyan rounded-full opacity-20 animate-pulse-glow blur-lg"></div>

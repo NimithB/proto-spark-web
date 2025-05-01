@@ -63,12 +63,14 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				},
-				// Custom colors for Protobots
+				// Enhanced colors for Protobots - more bold and elegant
 				proto: {
-					cyan: "#1EAEDB",
-					orange: "#F97316",
-					purple: "#E5DEFF",
-					navy: "#0F172A",
+					cyan: "#0EA5E9",       // Enhanced to a more vibrant blue
+					orange: "#F97316",      // Kept bright orange
+					purple: "#9b87f5",      // Enhanced to a more vibrant purple
+					navy: "#1A1F2C",        // Darker navy for elegance
+					magenta: "#D946EF",     // Added magenta for accent
+					vivid: "#8B5CF6",       // Added vivid purple option
 				}
 			},
 			borderRadius: {
@@ -100,11 +102,11 @@ export default {
 				'pulse-glow': {
 					'0%, 100%': { 
 						opacity: '1',
-						boxShadow: '0 0 15px rgba(30, 174, 219, 0.5)'  
+						boxShadow: '0 0 15px rgba(14, 165, 233, 0.6)'  // Enhanced glow effect
 					},
 					'50%': { 
 						opacity: '0.8',  
-						boxShadow: '0 0 30px rgba(30, 174, 219, 0.8)'  
+						boxShadow: '0 0 30px rgba(14, 165, 233, 0.9)'  // Enhanced glow effect
 					}
 				},
 				'spin-slow': {
@@ -130,10 +132,15 @@ export default {
 				'tech-pattern': "url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCIgdmlld0JveD0iMCAwIDYwIDYwIj48cGF0aCBkPSJNNTkuOTk5OTk4ODAwMTM5QzYwLDAuMjkzNzA0NDQ0ODM4NSw1OS43MDYyOTU1NTUxNjIsMCw1OS40MTI1OTc3NzY5OCwwQzU5LjExODkwMDAwMDAwMSwwLDU4LjgyNTE5NTU1NTE2MiwwLjI5MzcwNDQ0NDgzODUsNTguODI1MTkxMTExMTYyLDAuNTg3NDA4ODg5Njc2OUM1OC44MjUxOTU1NTUxNjIsMC44ODExMTMzMzQ1MTU0LDU5LjExODkwMDAwMDAwMSwxLjE3NDgxNzc3OTM1NCw1OS40MTI1OTc3NzY5OCwxLjE3NDgxNzc3OTM1NEM1OS43MDYyOTU1NTUxNjIsMS4xNzQ4MTc3NzkzNTQsNjAsMS4xNzQ4MTc3NzkzNTQsNTkuOTk5OTk4ODAwMTM5LDAuODgxMTEzMzM0NTE1NEM1OS45OTk5OTg4MDAxMzksMC41ODc0MDg4ODk2NzY5LDUkMTAwNzQyNzEzMjVwbSBhbHBoYSgwLjE1KSIgc3Ryb2tlLXdpZHRoPSIwIiBmaWxsPSIjMWVhZWRiIiBvcGFjaXR5PSIwLjExIi8+PHBhdGggZD0iTTMwLDBDMzAuMjkzNzA0NDQ0ODM4LDAsMzAuNTg3NDAyMjIzMDIsMC4yOTM3MDQ0NDQ4Mzg1LDMwLjU4NzQwMjIyMzAyLDAuNTg3NDA4ODg5Njc2OUMzMC41ODc0MDIyMjMwMiwwLjg4MTExMzMzNDUxNTQsMzAuMjkzNzA0NDQ0ODM4LDEuMTc0ODE3Nzc5MzU0LDMwLDEuMTc0ODE3Nzc5MzU0QzI5LjcwNjMwMjIyMzAyLDEuMTc0ODE3Nzc5MzU0LDI5LjQxMjU5Nzc3Njk4LDAuODgxMTEzMzM0NTE1NCwyOS40MTI1OTc3NzY5OCwwLjU4NzQwODg4OTY3NjlDMjkuNDEyNTk3Nzc2OTgsMC4yOTM3MDQ0NDQ4Mzg1LDI5LjcwNjMwMjIyMzAyLDAsMzAsMFoiIHN0cm9rZS13aWR0aD0iMCIgZmlsbD0iI2Y5NzMxNiIgb3BhY2l0eT0iMC4xMSIvPjxwYXRoIGQ9Ik0wLDBDMC4yOTM3MDQ0NDQ4Mzg1LDAsMC41ODc0MDg4ODk2NzY5LDAuMjkzNzA0NDQ0ODM4NSwwLjU4NzQwODg4OTY3NjksMC41ODc0MDg4ODk2NzY5QzAuNTg3NDA4ODg5Njc2OSwwLjg4MTExMzMzNDUxNTQsMC4yOTM3MDQ0NDQ4Mzg1LDEuMTc0ODE3Nzc5MzU0LDAsMS4xNzQ4MTc3NzkzNTRDMC4wMDAwMDAyNDQ4Mzg1MSwxLjE3NDgxNzc3OTM1NCwwLDAuODgxMTEzMzM0NTE1NCwwLDAuNTg3NDA4ODg5Njc2OUMwLDAuMjkzNzA0NDQ0ODM4NSwwLDAsMCwwWiIgc3Ryb2tlLXdpZHRoPSIwIiBmaWxsPSIjZTVkZWZmIiBvcGFjaXR5PSIwLjA3NSIvPjwvc3ZnPg==')",
 				'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
 				'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+				'elegant-gradient': 'linear-gradient(90deg, #1A1F2C 0%, #303950 100%)',
 			},
 			fontFamily: {
 				'poppins': ['Poppins', 'sans-serif'],
 				'inter': ['Inter', 'sans-serif'],
+			},
+			boxShadow: {
+				'elegant': '0 10px 30px -10px rgba(0, 0, 0, 0.3)',
+				'bold': '0 20px 40px -15px rgba(0, 0, 0, 0.4)',
 			}
 		}
 	},

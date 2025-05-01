@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Instagram, Facebook, MessageSquare } from 'lucide-react';
+import { Instagram, Facebook, MessageSquare, Phone } from 'lucide-react';
 
 const Footer: React.FC = () => {
   return (
@@ -88,6 +88,7 @@ const Footer: React.FC = () => {
             <h3 className="text-xl font-bold mb-4">Contact Us</h3>
             <address className="not-italic text-gray-300">
               <p className="mb-2">6/2 C.Ramaiah layout, Bengaluru</p>
+              <p className="mb-2">Phone: +91 89046 88500</p>
               <p className="mb-2">Email: protobots.services@gmail.com</p>
               <a 
                 href="https://wa.me/message/7WIBMBJGEKSSI1" 
