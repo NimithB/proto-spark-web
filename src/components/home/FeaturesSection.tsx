@@ -1,5 +1,5 @@
-
 import React from 'react';
+import scorpionBot from '@/assets/projects/scorpian.jpg';
 
 const FeaturesSection: React.FC = () => {
   return (
@@ -17,9 +17,9 @@ const FeaturesSection: React.FC = () => {
           <div className="relative">
             <div className="rounded-xl overflow-hidden shadow-2xl">
               <img 
-                src="/lovable-uploads/d9619f6f-17ea-469f-9394-83f831894b00.png" 
-                alt="Robot at Protobots workspace" 
-                className="w-full h-auto object-cover"
+                src={scorpionBot}
+                alt="Scorpion Robot at Protobots workspace" 
+                className="w-full h-[400px] object-cover"
               />
             </div>
             <div className="absolute -bottom-6 -right-6 bg-proto-orange rounded-xl p-4 shadow-lg hidden md:block">
