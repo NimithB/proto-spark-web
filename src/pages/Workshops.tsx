@@ -59,7 +59,7 @@ const upcomingWorkshops = [
 const handleEnquire = (workshop: any) => {
   const message = `Hi Protobots! I'm interested in the "${workshop.title}" workshop scheduled for ${workshop.date}. Could I get more information?`;
   const encodedMessage = encodeURIComponent(message);
-  window.open(`https://wa.me/qr/PHY6KG77QAUTD1?text=${encodedMessage}`, '_blank');
+  window.open(`https://wa.me/918904688500?text=${encodedMessage}`, '_blank');
 };
 
 const Workshops = () => {
@@ -235,7 +235,8 @@ const Workshops = () => {
               className="bg-proto-orange hover:bg-opacity-90"
               onClick={() => {
                 const message = "Hi Protobots! I'm interested in organizing a custom workshop. Can we discuss the details?";
-                window.open(`https://wa.me/qr/PHY6KG77QAUTD1?text=${encodeURIComponent(message)}`, '_blank');
+                const encodedMessage = encodeURIComponent(message);
+                window.open(`https://wa.me/918904688500?text=${encodedMessage}`, '_blank');
               }}
             >
               Request Custom Workshop

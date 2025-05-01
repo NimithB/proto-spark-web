@@ -139,8 +139,13 @@ const Projects = () => {
             <button 
               className="btn-primary bg-proto-orange hover:bg-opacity-90"
               onClick={() => {
-                const message = "Hi Protobots! I have a project idea that I'd like to discuss with you.";
-                window.open(`https://wa.me/qr/PHY6KG77QAUTD1?text=${encodeURIComponent(message)}`, '_blank');
+                const message = `Hi Protobots!
+I have a project idea that I'd like to discuss with you.
+Type: Project Collaboration
+Category: Innovation/Tech
+Looking forward to hearing from you!`;
+                const encodedMessage = encodeURIComponent(message);
+                window.open(`https://wa.me/918904688500?text=${encodedMessage}`, '_blank');
               }}
             >
               Discuss Your Idea
