@@ -36,9 +36,8 @@ const HeroSection: React.FC = () => {
                 auto-rotate
                 camera-controls
                 shadow-intensity="1"
-                class="w-full h-80 md:h-96"
+                className="w-full h-80 md:h-96"
                 style={{
-                  '--poster-color': 'transparent',
                   background: 'transparent',
                 }}
               ></model-viewer>
