@@ -1,75 +1,117 @@
-
-import React from 'react';
+import React, { useState } from 'react';
 import Layout from '../components/layout/Layout';
-import EquipmentCard from '../components/equipment/EquipmentCard';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
+import { sendWhatsAppMessage } from '@/utils/whatsapp';
+
+// Import equipment images
+import printer3d from '@/assets/equipment/3d_printer.jpg';
+import arduinoKit from '@/assets/equipment/arduino_kit.jpeg';
+import multimeter from '@/assets/equipment/Best-Digital-Multimeters-6.jpg';
+import cordlessDrill from '@/assets/equipment/drill_PNG24.png';
+import droneKit from '@/assets/equipment/drone_kit.jpg';
+import laserCutter from '@/assets/equipment/lazer_cutting.jpeg';
+import oscilloscope from '@/assets/equipment/oscilloscope.jpg';
+import roboticArm from '@/assets/equipment/robotic_arm.jpg';
+import solderingStation from '@/assets/equipment/soldering-stations.jpg';
+import EquipmentCard from '@/components/equipment/EquipmentCard';
+
+const equipmentItems = [
+  {
+    id: "3d-printer",
+    name: "3D Printer - Creality Ender 3",
+    image: printer3d,
+    description: "High-quality FDM 3D printer with a build volume of 220x220x250mm, perfect for prototyping and small production runs.",
+    category: "manufacturing"
+  },
+  {
+    id: "soldering-station",
+    name: "Professional Soldering Station",
+    image: solderingStation,
+    description: "Temperature-controlled soldering station with digital display, suitable for precision electronics work.",
+    category: "electronics"
+  },
+  {
+    id: "cordless-drill",
+    name: "Cordless Drill",
+    image: cordlessDrill,
+    description: "18V cordless drill with variable speed control and multiple torque settings for various applications.",
+    category: "tools"
+  },
+  {
+    id: "oscilloscope",
+    name: "Digital Oscilloscope",
+    image: oscilloscope,
+    description: "100MHz digital storage oscilloscope with dual channels for advanced electronics debugging and testing.",
+    category: "electronics"
+  },
+  {
+    id: "drone-kit",
+    name: "DIY Drone Kit",
+    image: droneKit,
+    description: "Complete quadcopter drone kit including frame, motors, ESCs, flight controller and remote.",
+    category: "robotics"
+  },
+  {
+    id: "multimeter",
+    name: "Digital Multimeter",
+    image: multimeter,
+    description: "Auto-ranging digital multimeter for measuring voltage, current, resistance and more.",
+    category: "electronics"
+  },
+  {
+    id: "arduino-kit",
+    name: "Arduino Starter Kit",
+    image: arduinoKit,
+    description: "Comprehensive Arduino starter kit with UNO board, breadboard, sensors, actuators and components.",
+    category: "electronics"
+  },
+  {
+    id: "laser-cutter",
+    name: "Desktop Laser Cutter",
+    image: laserCutter,
+    description: "40W CO2 laser cutter/engraver with 300x500mm bed for cutting and engraving various materials.",
+    category: "manufacturing"
+  },
+  {
+    id: "robotic-arm",
+    name: "Educational Robotic Arm",
+    image: roboticArm,
+    description: "6-axis robotic arm with programmable controller, ideal for learning robotics fundamentals.",
+    category: "robotics"
+  }
+];
 
 const Equipment = () => {
-  const equipmentItems = [
-    {
-      id: "3d-printer",
-      name: "3D Printer - Creality Ender 3",
-      image: "/lovable-uploads/ed96b7d4-61e2-4b21-a0b6-d1b3f6427c88.png",
-      description: "High-quality FDM 3D printer with a build volume of 220x220x250mm, perfect for prototyping and small production runs.",
-      category: "manufacturing"
-    },
-    {
-      id: "soldering-station",
-      name: "Professional Soldering Station",
-      image: "/lovable-uploads/c52b0d77-f343-4867-ad37-ee35a907c9d2.png",
-      description: "Temperature-controlled soldering station with digital display, suitable for precision electronics work.",
-      category: "electronics"
-    },
-    {
-      id: "cordless-drill",
-      name: "Cordless Drill",
-      image: "/lovable-uploads/952f4c03-58a3-419a-99e6-2b75b8eb193f.png",
-      description: "18V cordless drill with variable speed control and multiple torque settings for various applications.",
-      category: "tools"
-    },
-    {
-      id: "oscilloscope",
-      name: "Digital Oscilloscope",
-      image: "/lovable-uploads/1dd46598-f241-46f5-adbe-37d393e1e3d9.png",
-      description: "100MHz digital storage oscilloscope with dual channels for advanced electronics debugging and testing.",
-      category: "electronics"
-    },
-    {
-      id: "drone-kit",
-      name: "DIY Drone Kit",
-      image: "/lovable-uploads/7b54e5c2-fd46-423a-950f-21955f26305c.png",
-      description: "Complete quadcopter drone kit including frame, motors, ESCs, flight controller and remote.",
-      category: "robotics"
-    },
-    {
-      id: "multimeter",
-      name: "Digital Multimeter",
-      image: "/lovable-uploads/5466f83f-4a34-430e-9caf-1b6322ada408.png",
-      description: "Auto-ranging digital multimeter for measuring voltage, current, resistance and more.",
-      category: "electronics"
-    },
-    {
-      id: "arduino-kit",
-      name: "Arduino Starter Kit",
-      image: "/lovable-uploads/abe14db0-4252-4aa4-861f-9c47f2201058.png",
-      description: "Comprehensive Arduino starter kit with UNO board, breadboard, sensors, actuators and components.",
-      category: "electronics"
-    },
-    {
-      id: "laser-cutter",
-      name: "Desktop Laser Cutter",
-      image: "/lovable-uploads/01cb8c6b-e9c7-4de4-a3cf-f1c55a9a3a19.png",
-      description: "40W CO2 laser cutter/engraver with 300x500mm bed for cutting and engraving various materials.",
-      category: "manufacturing"
-    },
-    {
-      id: "robotic-arm",
-      name: "Educational Robotic Arm",
-      image: "/lovable-uploads/d9619f6f-17ea-469f-9394-83f831894b00.png",
-      description: "6-axis robotic arm with programmable controller, ideal for learning robotics fundamentals.",
-      category: "robotics"
+  const [enquiryData, setEnquiryData] = useState({
+    name: '',
+    phone: '',
+    equipment: '',
+    requirement: '',
+    type: 'rent'
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+
+    try {
+      sendWhatsAppMessage(enquiryData, 'equipment');
+
+      // Reset form
+      setEnquiryData({
+        name: '',
+        phone: '',
+        equipment: '',
+        requirement: '',
+        type: 'rent'
+      });
+    } catch (error) {
+      console.error('Error:', error);
+    } finally {
+      setIsSubmitting(false);
     }
-  ];
+  };
 
   return (
     <Layout>
@@ -183,20 +225,53 @@ const Equipment = () => {
       {/* Custom Request */}
       <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-4 md:px-6">
-          <div className="text-center max-w-3xl mx-auto">
-            <h2 className="text-3xl font-bold text-proto-navy mb-4">Can't Find What You Need?</h2>
-            <p className="text-lg text-gray-700 mb-8">
-              We have a wide range of equipment and tools not listed here. Contact us for specific requirements.
+          <div className="max-w-xl mx-auto">
+            <h2 className="text-3xl font-bold text-proto-navy mb-4 text-center">Can't Find What You Need?</h2>
+            <p className="text-lg text-gray-700 mb-8 text-center">
+              We have a wide range of equipment and tools not listed here. Let us know what you're looking for.
             </p>
-            <button 
-              className="btn-primary bg-proto-orange hover:bg-opacity-90"
-              onClick={() => {
-                const message = "Hi Protobots! I'm looking for specific equipment that I can't find on your website. Can you help?";
-                window.open(`https://wa.me/qr/PHY6KG77QAUTD1?text=${encodeURIComponent(message)}`, '_blank');
-              }}
-            >
-              Enquire for Specific Equipment
-            </button>
+            
+            <form onSubmit={handleSubmit} className="space-y-4">
+              <input
+                type="text"
+                placeholder="Your Name"
+                value={enquiryData.name}
+                onChange={(e) => setEnquiryData({...enquiryData, name: e.target.value})}
+                className="w-full px-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-proto-cyan focus:border-transparent"
+                required
+              />
+              <input
+                type="tel"
+                placeholder="Your Phone Number"
+                value={enquiryData.phone}
+                onChange={(e) => setEnquiryData({...enquiryData, phone: e.target.value})}
+                className="w-full px-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-proto-cyan focus:border-transparent"
+                required
+              />
+              <input
+                type="text"
+                placeholder="Required Equipment"
+                value={enquiryData.equipment}
+                onChange={(e) => setEnquiryData({...enquiryData, equipment: e.target.value})}
+                className="w-full px-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-proto-cyan focus:border-transparent"
+                required
+              />
+              <textarea
+                placeholder="Additional Details"
+                value={enquiryData.requirement}
+                onChange={(e) => setEnquiryData({...enquiryData, requirement: e.target.value})}
+                className="w-full px-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-proto-cyan focus:border-transparent"
+                rows={4}
+                required
+              />
+              <button 
+                type="submit"
+                className="w-full btn-primary bg-proto-orange hover:bg-opacity-90 py-3 rounded-lg font-medium"
+                disabled={isSubmitting}
+              >
+                {isSubmitting ? 'Sending...' : 'Send Enquiry'}
+              </button>
+            </form>
           </div>
         </div>
       </section>

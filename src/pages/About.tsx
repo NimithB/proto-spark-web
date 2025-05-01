@@ -1,6 +1,12 @@
-
 import React from 'react';
 import Layout from '../components/layout/Layout';
+
+// Import team member images from assets/team directory
+import saiVivekImage from '@/assets/team/sai vivek.jpg';
+import aishwaryaImage from '@/assets/team/Aishwarya.jpg';
+import chandhanaImage from '@/assets/team/chandana.jpg';
+import nimithImage from '@/assets/team/Nimith B.jpg';
+import aboutHeroImage from '@/assets/hero/about-hero.png';
 
 const About = () => {
   const teamMembers = [
@@ -8,25 +14,25 @@ const About = () => {
       name: "Sai Vivek",
       role: "Founder",
       bio: "Passionate entrepreneur with expertise in robotics and innovation.",
-      image: "/lovable-uploads/abe14db0-4252-4aa4-861f-9c47f2201058.png"
+      image: saiVivekImage
     },
     {
       name: "Aishwarya",
       role: "Co-founder",
       bio: "Electronics specialist with a background in advanced prototyping and development.",
-      image: "/lovable-uploads/a123894c-43b6-4147-848d-1a4fe2c44244.png"
+      image: aishwaryaImage
     },
     {
-      name: "Chandhana",
+      name: "Chandana",
       role: "Logistics Lead",
       bio: "Expert in supply chain management and workshop coordination.",
-      image: "/lovable-uploads/eecb036d-e342-43d8-a2ee-c351429fbd81.png"
+      image: chandhanaImage
     },
     {
       name: "Nimith",
       role: "Software Lead",
       bio: "Programming expert specializing in robotics software and embedded systems.",
-      image: "/lovable-uploads/d9619f6f-17ea-469f-9394-83f831894b00.png"
+      image: nimithImage
     }
   ];
 
@@ -70,7 +76,7 @@ const About = () => {
             <div className="order-1 lg:order-2">
               <div className="relative">
                 <img 
-                  src="/lovable-uploads/ff070ae4-d920-402f-833c-1b4b76835799.png" 
+                  src={aboutHeroImage} 
                   alt="Robot at Protobots" 
                   className="rounded-xl shadow-xl w-full h-auto"
                 />

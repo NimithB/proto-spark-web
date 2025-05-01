@@ -1,7 +1,7 @@
-
 import React, { useState } from 'react';
 import { ArrowRight } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
+import heroImage from '@/assets/hero/hero.png';
 
 const HeroSection: React.FC = () => {
   const navigate = useNavigate();
@@ -58,7 +58,7 @@ const HeroSection: React.FC = () => {
               {/* Drone PNG Image with hover animation */}
               <div className={`transition-all duration-500 ${isDroneHovered ? 'scale-110 -translate-y-4' : ''}`}>
                 <img 
-                  src="/models/drone.png" 
+                  src={heroImage}
                   alt="Drone" 
                   className="w-full h-auto drop-shadow-2xl"
                 />

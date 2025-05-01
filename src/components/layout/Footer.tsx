@@ -1,12 +1,13 @@
-
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Instagram, Facebook, MessageSquare, Phone } from 'lucide-react';
+import LogoDark from '@/assets/misc/logo_dark.png';
 
 const Footer: React.FC = () => {
   return (
     <footer className="bg-proto-navy text-white py-12">
       <div className="container mx-auto px-4 md:px-6">
+        <img src={LogoDark} alt="Proto Spark Logo" className="h-10 w-auto mb-4" />
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
           {/* Column 1: Logo & About */}
           <div>
@@ -15,6 +16,9 @@ const Footer: React.FC = () => {
                 Proto<span className="text-proto-cyan">bots</span>
               </span>
             </Link>
+            <div className="text-lg font-semibold">
+              Proto Bots
+            </div>
             <p className="text-gray-300 mb-2">
               Bangalore-based tech startup offering innovation-focused services, 
               electronics component sales, prototyping, and workshop space rentals.

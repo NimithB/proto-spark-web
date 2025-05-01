@@ -1,54 +1,85 @@
-
 import React from 'react';
 import Layout from '../components/layout/Layout';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 
-const Projects = () => {
-  const projects = [
-    {
-      id: 1,
-      title: "Solar-Powered Rover",
-      description: "An autonomous rover that uses solar power for operation. Built with recycled materials and advanced electronics.",
-      image: "/lovable-uploads/ed96b7d4-61e2-4b21-a0b6-d1b3f6427c88.png",
-      tags: ["robotics", "solar", "automation"]
-    },
-    {
-      id: 2,
-      title: "Drone Delivery System",
-      description: "A prototype drone designed for small package deliveries with automated route planning and obstacle avoidance.",
-      image: "/lovable-uploads/7b54e5c2-fd46-423a-950f-21955f26305c.png",
-      tags: ["drone", "delivery", "electronics"]
-    },
-    {
-      id: 3,
-      title: "Smart Irrigation Controller",
-      description: "IoT-based irrigation system that monitors soil moisture and weather conditions to optimize water usage.",
-      image: "/lovable-uploads/5466f83f-4a34-430e-9caf-1b6322ada408.png",
-      tags: ["iot", "agriculture", "automation"]
-    },
-    {
-      id: 4,
-      title: "Robotic Spider",
-      description: "A multi-legged robot inspired by arachnids, featuring advanced motion algorithms and adaptable terrain navigation.",
-      image: "/lovable-uploads/abe14db0-4252-4aa4-861f-9c47f2201058.png",
-      tags: ["robotics", "biomimicry"]
-    },
-    {
-      id: 5,
-      title: "Electric Scooter Conversion",
-      description: "Converting conventional scooters to electric power with custom battery packs and motor controllers.",
-      image: "/lovable-uploads/01cb8c6b-e9c7-4de4-a3cf-f1c55a9a3a19.png",
-      tags: ["ev", "conversion", "electronics"]
-    },
-    {
-      id: 6,
-      title: "Autonomous Water Quality Monitor",
-      description: "An IoT device for monitoring water quality parameters in lakes and rivers with real-time data transmission.",
-      image: "/lovable-uploads/eecb036d-e342-43d8-a2ee-c351429fbd81.png",
-      tags: ["iot", "environmental", "sensors"]
-    }
-  ];
+// Import project images
+import agricultureRobot from '@/assets/projects/agriculture robot.jpg';
+import medicalDrone from '@/assets/projects/drone_for_medi_purpose.jpg';
+import solarBike from '@/assets/projects/e-Bike_solar.jpg';
+import disasterRobot from '@/assets/projects/Multi-Agent Robotic System for Disaster Relief.jpg';
+import hybridConversion from '@/assets/projects/petrol_to_hybrid.jpg';
+import quadcopter from '@/assets/projects/Quadcopter.jpg';
+import robot from '@/assets/projects/robot.jpg';
+import scorpian from '@/assets/projects/scorpian.jpg';
+import seedSowing from '@/assets/projects/seed_sowing.jpg';
 
+const projectItems = [
+  {
+    id: "agriculture-robot",
+    title: "Agriculture Robot",
+    image: agricultureRobot,
+    description: "Autonomous robot designed for agricultural applications and farming automation.",
+    category: "robotics"
+  },
+  {
+    id: "medical-drone",
+    title: "Medical Purpose Drone",
+    image: medicalDrone,
+    description: "Specialized drone system for medical supply delivery and emergency response.",
+    category: "drones"
+  },
+  {
+    id: "solar-bike",
+    title: "Solar E-Bike",
+    image: solarBike,
+    description: "Electric bicycle with integrated solar charging capabilities.",
+    category: "sustainable"
+  },
+  {
+    id: "disaster-relief",
+    title: "Multi-Agent Disaster Relief System",
+    image: disasterRobot,
+    description: "Coordinated robotic system for disaster response and relief operations.",
+    category: "robotics"
+  },
+  {
+    id: "hybrid-conversion",
+    title: "Petrol to Hybrid Conversion",
+    image: hybridConversion,
+    description: "Vehicle conversion project from petrol to hybrid power system.",
+    category: "automotive"
+  },
+  {
+    id: "quadcopter",
+    title: "Quadcopter",
+    image: quadcopter,
+    description: "Custom-built quadcopter drone for aerial applications.",
+    category: "drones"
+  },
+  {
+    id: "robot",
+    title: "General Purpose Robot",
+    image: robot,
+    description: "Versatile robotic platform for various applications.",
+    category: "robotics"
+  },
+  {
+    id: "scorpian",
+    title: "Scorpion Robot",
+    image: scorpian,
+    description: "Bio-inspired robotic design based on scorpion movement patterns.",
+    category: "robotics"
+  },
+  {
+    id: "seed-sowing",
+    title: "Automated Seed Sowing",
+    image: seedSowing,
+    description: "Automated system for precise and efficient seed sowing operations.",
+    category: "agriculture"
+  }
+];
+
+const Projects = () => {
   return (
     <Layout>
       {/* Hero Section */}
@@ -67,7 +98,7 @@ const Projects = () => {
       <section className="py-16">
         <div className="container mx-auto px-4 md:px-6">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {projects.map((project) => (
+            {projectItems.map((project) => (
               <Card key={project.id} className="overflow-hidden hover:shadow-lg transition-shadow duration-300">
                 <div className="h-56 overflow-hidden">
                   <img 
@@ -84,14 +115,11 @@ const Projects = () => {
                 </CardContent>
                 <CardFooter>
                   <div className="flex flex-wrap gap-2">
-                    {project.tags.map((tag, index) => (
-                      <span 
-                        key={index} 
-                        className="bg-proto-purple px-3 py-1 rounded-full text-sm text-proto-navy"
-                      >
-                        {tag}
-                      </span>
-                    ))}
+                    <span 
+                      className="bg-proto-purple px-3 py-1 rounded-full text-sm text-proto-navy"
+                    >
+                      {project.category}
+                    </span>
                   </div>
                 </CardFooter>
               </Card>

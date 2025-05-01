@@ -1,60 +1,68 @@
-
 import React from 'react';
 import Layout from '../components/layout/Layout';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 
+// Import workshop images
+import droneBuildingWorkshop from '@/assets/workshops/drone-workshop.jpg';
+import pcbDesignWorkshop from '@/assets/workshops/pcb.jpeg';
+import electronicsWorkshop from '@/assets/workshops/electronics-workshop.jpeg';
+import roboticsWorkshop from '@/assets/workshops/robotics-workshop.jpg';
+import iotWorkshop from '@/assets/workshops/iot-workshop.jpeg';
+import programmingWorkshop from '@/assets/workshops/programming-workshop.jpeg';
+import printingWorkshop from '@/assets/workshops/3d-printing-workshop.jpeg';
+
+const upcomingWorkshops = [
+  {
+    id: 1,
+    title: "Drone Building Workshop",
+    date: "June 15, 2025",
+    description: "Learn to build your own drone from scratch. This hands-on workshop covers assembly, calibration, and flight basics.",
+    image: droneBuildingWorkshop,
+    category: "robotics"
+  },
+  {
+    id: 2,
+    title: "PCB Design Masterclass",
+    date: "June 22, 2025",
+    description: "Master the art of PCB design using industry-standard tools. Create your own circuit board by the end of the session.",
+    image: pcbDesignWorkshop,
+    category: "electronics"
+  },
+  {
+    id: 3,
+    title: "Electronics Fundamentals",
+    date: "July 5, 2025",
+    description: "Perfect for beginners, this workshop introduces the fundamentals of electronics and circuit design.",
+    image: electronicsWorkshop,
+    category: "electronics"
+  },
+  {
+    id: 4,
+    title: "Robotics for Beginners",
+    date: "July 12, 2025",
+    description: "Get started with robotics fundamentals, from basic components to simple automated systems.",
+    image: roboticsWorkshop,
+    category: "robotics"
+  },
+  {
+    id: 5,
+    title: "IoT Project Development",
+    date: "July 19, 2025",
+    description: "Develop your own Internet of Things project using sensors, microcontrollers and cloud connectivity.",
+    image: iotWorkshop,
+    category: "iot"
+  }
+];
+
+const handleEnquire = (workshop: any) => {
+  const message = `Hi Protobots! I'm interested in the "${workshop.title}" workshop scheduled for ${workshop.date}. Could I get more information?`;
+  const encodedMessage = encodeURIComponent(message);
+  window.open(`https://wa.me/qr/PHY6KG77QAUTD1?text=${encodedMessage}`, '_blank');
+};
+
 const Workshops = () => {
-  const upcomingWorkshops = [
-    {
-      id: 1,
-      title: "Drone Building Workshop",
-      date: "June 15, 2025",
-      description: "Learn to build your own drone from scratch. This hands-on workshop covers assembly, calibration, and flight basics.",
-      image: "/lovable-uploads/ff070ae4-d920-402f-833c-1b4b76835799.png",
-      category: "robotics"
-    },
-    {
-      id: 2,
-      title: "PCB Design Masterclass",
-      date: "June 22, 2025",
-      description: "Master the art of PCB design using industry-standard tools. Create your own circuit board by the end of the session.",
-      image: "/lovable-uploads/c52b0d77-f343-4867-ad37-ee35a907c9d2.png",
-      category: "electronics"
-    },
-    {
-      id: 3,
-      title: "Introduction to Arduino",
-      date: "July 5, 2025",
-      description: "Perfect for beginners, this workshop introduces the fundamentals of Arduino programming and basic electronics.",
-      image: "/lovable-uploads/952f4c03-58a3-419a-99e6-2b75b8eb193f.png",
-      category: "electronics"
-    },
-    {
-      id: 4,
-      title: "Robotics for Beginners",
-      date: "July 12, 2025",
-      description: "Get started with robotics fundamentals, from basic components to simple automated systems.",
-      image: "/lovable-uploads/d9619f6f-17ea-469f-9394-83f831894b00.png",
-      category: "robotics"
-    },
-    {
-      id: 5,
-      title: "IoT Project Development",
-      date: "July 19, 2025",
-      description: "Develop your own Internet of Things project using sensors, microcontrollers and cloud connectivity.",
-      image: "/lovable-uploads/1dd46598-f241-46f5-adbe-37d393e1e3d9.png",
-      category: "iot"
-    }
-  ];
-
-  const handleEnquire = (workshop: any) => {
-    const message = `Hi Protobots! I'm interested in the "${workshop.title}" workshop scheduled for ${workshop.date}. Could I get more information?`;
-    const encodedMessage = encodeURIComponent(message);
-    window.open(`https://wa.me/qr/PHY6KG77QAUTD1?text=${encodedMessage}`, '_blank');
-  };
-
   return (
     <Layout>
       {/* Hero Section */}

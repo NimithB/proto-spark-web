@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -14,6 +13,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ redirectToWhatsApp = true }) 
   const [formData, setFormData] = useState({
     name: '',
     email: '',
+    phone: '',
     subject: '',
     message: ''
   });
@@ -33,12 +33,15 @@ const ContactForm: React.FC<ContactFormProps> = ({ redirectToWhatsApp = true }) 
 
     try {
       if (redirectToWhatsApp) {
-        // Format the message for WhatsApp
-        const formattedMessage = `Hi Protobots!\n\nName: ${formData.name}\nEmail: ${formData.email}\nSubject: ${formData.subject}\n\nMessage: ${formData.message}`;
-        const encodedMessage = encodeURIComponent(formattedMessage);
+        // Simplified message format without stars and headers
+        const formattedMessage = `Name: ${formData.name}
+Email: ${formData.email}
+Phone: ${formData.phone}
+Subject: ${formData.subject}
+Message: ${formData.message}`;
         
-        // Redirect to WhatsApp with the pre-filled message
-        window.open(`https://wa.me/message/7WIBMBJGEKSSI1?text=${encodedMessage}`, '_blank');
+        const encodedMessage = encodeURIComponent(formattedMessage);
+        window.open(`https://wa.me/918904688500?text=${encodedMessage}`, '_blank');
       } else {
         // For future implementation if needed
         toast({
@@ -51,6 +54,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ redirectToWhatsApp = true }) 
       setFormData({
         name: '',
         email: '',
+        phone: '',
         subject: '',
         message: ''
       });
@@ -96,6 +100,20 @@ const ContactForm: React.FC<ContactFormProps> = ({ redirectToWhatsApp = true }) 
             required
           />
         </div>
+      </div>
+      
+      <div className="space-y-2">
+        <label htmlFor="phone" className="text-sm font-medium">
+          Phone
+        </label>
+        <Input
+          id="phone"
+          name="phone"
+          value={formData.phone}
+          onChange={handleChange}
+          placeholder="Your phone number"
+          required
+        />
       </div>
       
       <div className="space-y-2">

@@ -1,7 +1,8 @@
-
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
+import logo from '@/assets/misc/logo.png';
+import { cn } from '@/lib/utils';
 
 const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -27,15 +28,20 @@ const Navbar: React.FC = () => {
   };
 
   return (
-    <nav className={`fixed w-full z-50 transition-all duration-300 ${scrolled ? 'bg-white shadow-md py-3' : 'bg-transparent py-5'}`}>
-      <div className="container mx-auto px-4 md:px-6">
-        <div className="flex justify-between items-center">
-          <Link to="/" className="flex items-center">
-            <span className="text-proto-navy font-poppins font-extrabold text-2xl">
-              Proto<span className="text-proto-cyan">bots</span>
+    <header className="fixed top-0 w-full bg-white/80 backdrop-blur-md z-50 border-b border-slate-200">
+      <div className="container mx-auto px-4">
+        <div className="flex items-center justify-between h-16">
+          <Link to="/" className="flex items-center gap-2">
+            <img 
+              src={logo} 
+              alt="Proto Bots Logo" 
+              className="h-8 w-auto"
+            />
+            <span className="text-xl font-bold">
+              <span className="text-black">Proto</span>
+              <span className="text-blue-400">Bots</span>
             </span>
           </Link>
-
           {/* Desktop Navigation */}
           <div className="hidden md:flex space-x-8">
             <Link to="/" className="text-proto-navy hover:text-proto-cyan font-medium transition-colors">
@@ -117,7 +123,7 @@ const Navbar: React.FC = () => {
           </div>
         </div>
       )}
-    </nav>
+    </header>
   );
 };
 

@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Dialog } from '@/components/ui/dialog';
 import {
@@ -52,16 +51,25 @@ const EquipmentCard: React.FC<EquipmentCardProps> = ({
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     
-    // Format the message for WhatsApp
+    // Format the message with proper line breaks
     const purposeText = formData.purpose === 'rent' ? 'rent' : 'buy';
-    const formattedMessage = `Hi Protobots! I'm interested in ${purposeText}ing the ${name}.\n\nName: ${formData.name}\n\nMessage: ${formData.message}`;
+    const formattedMessage = `Equipment Inquiry:\nName: ${formData.name}\nEquipment: ${name}\nPurpose: ${purposeText}\nMessage: ${formData.message}`;
+
+    // Use the correct WhatsApp URL format with phone number
+    const phoneNumber = '918904688500';
     const encodedMessage = encodeURIComponent(formattedMessage);
+    const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
     
-    // Redirect to WhatsApp with the pre-filled message
-    window.open(`https://wa.me/message/7WIBMBJGEKSSI1?text=${encodedMessage}`, '_blank');
+    // Open WhatsApp
+    window.open(whatsappURL, '_blank');
     
-    // Close the dialog
+    // Close the dialog and reset form
     setIsDialogOpen(false);
+    setFormData({
+      name: '',
+      purpose: 'rent',
+      message: ''
+    });
   };
 
   return (
