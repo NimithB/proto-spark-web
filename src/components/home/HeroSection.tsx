@@ -48,23 +48,6 @@ const HeroSection: React.FC = () => {
     <section className="relative bg-gradient-to-br from-white to-proto-purple pt-32 pb-16 md:pt-40 md:pb-24 overflow-hidden">
       <div className="absolute inset-0 z-0 bg-tech-pattern opacity-30"></div>
       
-      {/* Custom cursor style */}
-      <style jsx>{`
-        .custom-cursor {
-          position: fixed;
-          width: 30px;
-          height: 30px;
-          background-image: url('/models/drone-cursor.png');
-          background-size: contain;
-          background-repeat: no-repeat;
-          pointer-events: none;
-          z-index: 9999;
-          transform: translate(-50%, -50%);
-          opacity: 0.8;
-          transition: transform 0.1s ease;
-        }
-      `}</style>
-      
       <div className="container mx-auto px-4 md:px-6 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div className="space-y-6">
