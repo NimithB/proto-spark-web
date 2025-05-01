@@ -7,7 +7,7 @@ import {
   BookOpen, 
   Home, 
   Wrench, 
-  Drone 
+  Plane 
 } from 'lucide-react';
 
 const ServicesSection: React.FC = () => {
@@ -45,7 +45,7 @@ const ServicesSection: React.FC = () => {
     {
       title: "Drone Workshops",
       description: "Build and fly your own drone with our specialized workshop programs.",
-      icon: <Drone size={40} />,
+      icon: <Plane size={40} />,
       bgColor: "bg-blue-500",
       path: "/workshops"
     },

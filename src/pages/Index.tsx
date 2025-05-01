@@ -7,16 +7,22 @@ import FeaturesSection from '../components/home/FeaturesSection';
 
 const Index = () => {
   useEffect(() => {
-    // Load the model-viewer script
-    const modelViewerScript = document.createElement('script');
-    modelViewerScript.type = 'module';
-    modelViewerScript.src = 'https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js';
-    document.head.appendChild(modelViewerScript);
+    // Check if the script is already loaded to prevent duplicates
+    if (!document.querySelector('script[src*="model-viewer"]')) {
+      // Load the model-viewer script
+      const modelViewerScript = document.createElement('script');
+      modelViewerScript.type = 'module';
+      modelViewerScript.src = 'https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js';
+      document.head.appendChild(modelViewerScript);
 
-    return () => {
-      // Clean up
-      document.head.removeChild(modelViewerScript);
-    };
+      return () => {
+        // Clean up only if the script exists
+        const script = document.querySelector('script[src*="model-viewer"]');
+        if (script) {
+          document.head.removeChild(script);
+        }
+      };
+    }
   }, []);
 
   return (
