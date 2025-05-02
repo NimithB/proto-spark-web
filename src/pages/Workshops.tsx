@@ -17,7 +17,6 @@ const upcomingWorkshops = [
   {
     id: 1,
     title: "Drone Building Workshop",
-    date: "June 15, 2025",
     description: "Learn to build your own drone from scratch. This hands-on workshop covers assembly, calibration, and flight basics.",
     image: droneBuildingWorkshop,
     category: "robotics"
@@ -25,7 +24,6 @@ const upcomingWorkshops = [
   {
     id: 2,
     title: "PCB Design Masterclass",
-    date: "June 22, 2025",
     description: "Master the art of PCB design using industry-standard tools. Create your own circuit board by the end of the session.",
     image: pcbDesignWorkshop,
     category: "electronics"
@@ -33,7 +31,6 @@ const upcomingWorkshops = [
   {
     id: 3,
     title: "Electronics Fundamentals",
-    date: "July 5, 2025",
     description: "Perfect for beginners, this workshop introduces the fundamentals of electronics and circuit design.",
     image: electronicsWorkshop,
     category: "electronics"
@@ -41,7 +38,6 @@ const upcomingWorkshops = [
   {
     id: 4,
     title: "Robotics for Beginners",
-    date: "July 12, 2025",
     description: "Get started with robotics fundamentals, from basic components to simple automated systems.",
     image: roboticsWorkshop,
     category: "robotics"
@@ -49,7 +45,6 @@ const upcomingWorkshops = [
   {
     id: 5,
     title: "IoT Project Development",
-    date: "July 19, 2025",
     description: "Develop your own Internet of Things project using sensors, microcontrollers and cloud connectivity.",
     image: iotWorkshop,
     category: "iot"
@@ -57,7 +52,7 @@ const upcomingWorkshops = [
 ];
 
 const handleEnquire = (workshop: any) => {
-  const message = `Hi Protobots! I'm interested in the "${workshop.title}" workshop scheduled for ${workshop.date}. Could I get more information?`;
+  const message = `Hi Protobots! I'm interested in the "${workshop.title}" workshop. Could I get more information?`;
   const encodedMessage = encodeURIComponent(message);
   window.open(`https://wa.me/918904688500?text=${encodedMessage}`, '_blank');
 };
@@ -103,7 +98,6 @@ const Workshops = () => {
                     </div>
                     <CardHeader>
                       <CardTitle>{workshop.title}</CardTitle>
-                      <CardDescription>Date: {workshop.date}</CardDescription>
                     </CardHeader>
                     <CardContent>
                       <p>{workshop.description}</p>
@@ -136,7 +130,6 @@ const Workshops = () => {
                       </div>
                       <CardHeader>
                         <CardTitle>{workshop.title}</CardTitle>
-                        <CardDescription>Date: {workshop.date}</CardDescription>
                       </CardHeader>
                       <CardContent>
                         <p>{workshop.description}</p>
@@ -169,7 +162,6 @@ const Workshops = () => {
                       </div>
                       <CardHeader>
                         <CardTitle>{workshop.title}</CardTitle>
-                        <CardDescription>Date: {workshop.date}</CardDescription>
                       </CardHeader>
                       <CardContent>
                         <p>{workshop.description}</p>
@@ -202,7 +194,6 @@ const Workshops = () => {
                       </div>
                       <CardHeader>
                         <CardTitle>{workshop.title}</CardTitle>
-                        <CardDescription>Date: {workshop.date}</CardDescription>
                       </CardHeader>
                       <CardContent>
                         <p>{workshop.description}</p>
