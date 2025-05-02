@@ -39,11 +39,11 @@ const About = () => {
   return (
     <Layout>
       {/* Hero Section */}
-      <section className="pt-28 pb-10 bg-gradient-to-b from-proto-purple to-white">
+      <section className="pt-24 pb-8 bg-gradient-to-b from-proto-purple to-white">
         <div className="container mx-auto px-4 md:px-6">
           <div className="text-center max-w-3xl mx-auto">
-            <h1 className="text-4xl md:text-5xl font-bold text-proto-navy mb-4">About Protobots</h1>
-            <p className="text-xl text-gray-700">
+            <h1 className="text-3xl md:text-4xl font-bold text-proto-navy mb-3">About Protobots</h1>
+            <p className="text-lg text-gray-700">
               Building the future through technology and innovation
             </p>
           </div>
@@ -51,25 +51,49 @@ const About = () => {
       </section>
 
       {/* Mission & Story */}
-      <section className="py-16">
+      <section className="py-12">
         <div className="container mx-auto px-4 md:px-6">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
             <div className="order-2 lg:order-1">
-              <h2 className="text-3xl font-bold text-proto-navy mb-6">Our Mission</h2>
-              <p className="text-lg text-gray-700 mb-6">
-                At Protobots, we're committed to democratizing access to technology education and resources. 
-                We aim to foster a community of innovators in Bangalore by providing affordable, high-quality 
-                workshops, components, and workspace facilities.
+              <h2 className="text-2xl font-bold text-proto-navy mb-4">Our Mission</h2>
+              <p className="text-base text-gray-700 mb-4 text-justify">
+                Our mission is to democratize innovation by making technology hands-on, affordable, and accessible. 
+                We empower creators with the tools, mentorship, and environment to learn by building, and to solve 
+                real-world problems with confidence.
               </p>
-              <p className="text-lg text-gray-700 mb-6">
-                We believe that hands-on experience is the best teacher, which is why all our services are 
-                designed to give you practical skills you can immediately apply to your projects.
+              <div className="space-y-3 mb-4">
+                <p className="text-base text-gray-700">We aim to:</p>
+                <ul className="list-disc list-inside text-base text-gray-700 pl-4 space-y-1">
+                  <li>Bridge the gap between theory and practical skills</li>
+                  <li>Enable sustainable and smart innovations</li>
+                  <li>Foster a maker culture driven by purpose, not just profit</li>
+                </ul>
+              </div>
+              <p className="text-base text-gray-700 font-medium mb-8">
+                At PROTOBOTS, we don't just develop tech—we develop technologists.
               </p>
-              <h2 className="text-3xl font-bold text-proto-navy mb-6 mt-12">Our Story</h2>
-              <p className="text-lg text-gray-700">
-                Protobots was founded in 2023 by a group of engineers and educators who saw a need for 
-                accessible technology resources in Bangalore. What started as a small workshop space has 
-                grown into a comprehensive innovation hub that serves students, hobbyists, and professionals alike.
+
+              <h2 className="text-2xl font-bold text-proto-navy mb-4">Our Story</h2>
+              <p className="text-base text-gray-700 mb-4 text-justify">
+                PROTOBOTS is a technology-driven startup founded by Sai Vivek Y and Aishwarya S, two engineering 
+                innovators united by their passion for building, creating, and problem-solving. What began as an 
+                academic journey quickly transformed into a mission to empower the next generation of creators.
+              </p>
+              <p className="text-base text-gray-700 mb-4 text-justify">
+                With over 50+ hands-on projects and 30+ certifications between them, they envisioned PROTOBOTS 
+                as a platform where imagination meets implementation — developing practical solutions in fields 
+                like robotics, renewable energy, defense, and agriculture.
+              </p>
+              <p className="text-base text-gray-700 mb-4 text-justify">
+                Notable innovations include hybrid electric bikes, vertical axis wind turbines, jammer systems, 
+                humanoid robots, and an intelligent multifunctional agricultural robot designed to automate 
+                critical farming tasks.
+              </p>
+              <p className="text-base text-gray-700 text-justify">
+                The startup earned international recognition when Sai Vivek and Aishwarya were chosen among 
+                India's top 50 student innovators to pitch at Junicorn, a prestigious global startup program 
+                in the U.S. There, they represented PROTOBOTS before global investors and participated in the 
+                Global AI Summit in Austin, Texas.
               </p>
             </div>
 
