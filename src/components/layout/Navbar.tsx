@@ -35,7 +35,7 @@ const Navbar: React.FC = () => {
             <img 
               src={logo} 
               alt="Proto Bots Logo" 
-              className="h-8 w-auto"
+              className="h-12 w-auto"
             />
             <span className="text-xl font-bold">
               <span className="text-black">Proto</span>

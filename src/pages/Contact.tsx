@@ -1,4 +1,3 @@
-
 import React from 'react';
 import Layout from '../components/layout/Layout';
 import ContactForm from '../components/shared/ContactForm';
@@ -84,19 +83,28 @@ const Contact = () => {
                     href="https://www.instagram.com/proto_bots?igsh=ZzBmd3dtamZ6bzN1" 
                     target="_blank" 
                     rel="noopener noreferrer" 
-                    className="bg-gray-100 hover:bg-gray-200 p-3 rounded-full transition-colors"
+                    className="bg-gradient-to-br from-purple-600 via-pink-600 to-orange-500 p-3 rounded-full transition-transform hover:scale-110"
                     aria-label="Instagram"
                   >
-                    <Instagram size={24} className="text-proto-navy" />
+                    <Instagram size={24} className="text-white" />
                   </a>
                   <a 
                     href="https://www.facebook.com/share/1AwEhTVWkP" 
                     target="_blank" 
                     rel="noopener noreferrer" 
-                    className="bg-gray-100 hover:bg-gray-200 p-3 rounded-full transition-colors"
+                    className="bg-[#1877f2] p-3 rounded-full transition-transform hover:scale-110"
                     aria-label="Facebook"
                   >
-                    <Facebook size={24} className="text-proto-navy" />
+                    <Facebook size={24} className="text-white" />
+                  </a>
+                  <a 
+                    href="https://wa.me/918904688500" 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    className="bg-[#25D366] p-3 rounded-full transition-transform hover:scale-110"
+                    aria-label="WhatsApp"
+                  >
+                    <MessageSquare size={24} className="text-white" />
                   </a>
                 </div>
               </div>

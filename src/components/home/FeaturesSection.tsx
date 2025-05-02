@@ -1,15 +1,27 @@
 import React from 'react';
 import scorpionBot from '@/assets/projects/scorpian.jpg';
+import collabImage from '@/assets/misc/collab.jpg';
 
 const FeaturesSection: React.FC = () => {
   return (
     <section className="py-20 bg-white">
       <div className="container mx-auto px-4 md:px-6">
-        <div className="text-center max-w-2xl mx-auto mb-16">
+        <div className="text-center max-w-2xl mx-auto mb-8">
           <h2 className="section-title mb-4">Why Choose Protobots</h2>
           <p className="text-gray-600 text-lg">
             We combine innovation, expertise, and a passion for technology
           </p>
+        </div>
+
+        {/* Added Collaboration Image */}
+        <div className="max-w-4xl mx-auto mb-16">
+          <div className="rounded-xl overflow-hidden shadow-lg">
+            <img 
+              src={collabImage}
+              alt="Collaboration at Protobots" 
+              className="w-full h-[300px] object-cover"
+            />
+          </div>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
