@@ -115,48 +115,49 @@ const Equipment = () => {
 
   return (
     <Layout>
-      {/* Hero Section */}
-      <section className="pt-28 pb-10 bg-gradient-to-b from-proto-purple to-white">
+      {/* Hero Section - Updated for better responsiveness */}
+      <section className="pt-20 md:pt-28 pb-8 md:pb-10 bg-gradient-to-b from-proto-purple to-white">
         <div className="container mx-auto px-4 md:px-6">
           <div className="text-center max-w-3xl mx-auto">
-            <h1 className="text-4xl md:text-5xl font-bold text-proto-navy mb-4">Equipment & Tools</h1>
-            <p className="text-xl text-gray-700 mb-8">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-proto-navy mb-3 md:mb-4">Equipment & Tools</h1>
+            <p className="text-lg md:text-xl text-gray-700 mb-6 md:mb-8">
               High-quality equipment available for rent or purchase to support your technology projects
             </p>
           </div>
         </div>
       </section>
 
-      {/* Equipment Listings */}
-      <section className="py-16">
+      {/* Equipment Listings - Updated grid and spacing */}
+      <section className="py-8 md:py-16">
         <div className="container mx-auto px-4 md:px-6">
-          <Tabs defaultValue="all" className="mb-8">
-            <div className="flex justify-center mb-6">
-              <TabsList>
-                <TabsTrigger value="all">All Equipment</TabsTrigger>
-                <TabsTrigger value="electronics">Electronics</TabsTrigger>
-                <TabsTrigger value="robotics">Robotics</TabsTrigger>
-                <TabsTrigger value="manufacturing">Manufacturing</TabsTrigger>
-                <TabsTrigger value="tools">Tools</TabsTrigger>
+          <Tabs defaultValue="all" className="mb-6 md:mb-8">
+            <div className="flex justify-center mb-4 md:mb-6 overflow-x-auto">
+              <TabsList className="flex-wrap justify-center">
+                <TabsTrigger value="all" className="px-3 py-1.5 md:px-4 md:py-2">All Equipment</TabsTrigger>
+                <TabsTrigger value="electronics" className="px-3 py-1.5 md:px-4 md:py-2">Electronics</TabsTrigger>
+                <TabsTrigger value="robotics" className="px-3 py-1.5 md:px-4 md:py-2">Robotics</TabsTrigger>
+                <TabsTrigger value="manufacturing" className="px-3 py-1.5 md:px-4 md:py-2">Manufacturing</TabsTrigger>
+                <TabsTrigger value="tools" className="px-3 py-1.5 md:px-4 md:py-2">Tools</TabsTrigger>
               </TabsList>
             </div>
 
             <TabsContent value="all" className="mt-0">
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 xl:gap-8">
                 {equipmentItems.map((item) => (
-                  <EquipmentCard
-                    key={item.id}
-                    id={item.id}
-                    name={item.name}
-                    image={item.image}
-                    description={item.description}
-                  />
+                  <div key={item.id} className="h-full">
+                    <EquipmentCard
+                      id={item.id}
+                      name={item.name}
+                      image={item.image}
+                      description={item.description}
+                    />
+                  </div>
                 ))}
               </div>
             </TabsContent>
 
             <TabsContent value="electronics" className="mt-0">
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 lg:gap-8">
                 {equipmentItems
                   .filter(item => item.category === 'electronics')
                   .map((item) => (
@@ -172,7 +173,7 @@ const Equipment = () => {
             </TabsContent>
 
             <TabsContent value="robotics" className="mt-0">
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 lg:gap-8">
                 {equipmentItems
                   .filter(item => item.category === 'robotics')
                   .map((item) => (
@@ -188,7 +189,7 @@ const Equipment = () => {
             </TabsContent>
 
             <TabsContent value="manufacturing" className="mt-0">
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 lg:gap-8">
                 {equipmentItems
                   .filter(item => item.category === 'manufacturing')
                   .map((item) => (
@@ -204,7 +205,7 @@ const Equipment = () => {
             </TabsContent>
 
             <TabsContent value="tools" className="mt-0">
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 lg:gap-8">
                 {equipmentItems
                   .filter(item => item.category === 'tools')
                   .map((item) => (
@@ -222,12 +223,12 @@ const Equipment = () => {
         </div>
       </section>
 
-      {/* Custom Request */}
-      <section className="py-16 bg-gray-50">
+      {/* Custom Request Form - Updated for better responsiveness */}
+      <section className="py-8 md:py-16 bg-gray-50">
         <div className="container mx-auto px-4 md:px-6">
           <div className="max-w-xl mx-auto">
-            <h2 className="text-3xl font-bold text-proto-navy mb-4 text-center">Can't Find What You Need?</h2>
-            <p className="text-lg text-gray-700 mb-8 text-center">
+            <h2 className="text-2xl md:text-3xl font-bold text-proto-navy mb-3 md:mb-4 text-center">Can't Find What You Need?</h2>
+            <p className="text-base md:text-lg text-gray-700 mb-6 md:mb-8 text-center">
               We have a wide range of equipment and tools not listed here. Let us know what you're looking for.
             </p>
             
@@ -237,7 +238,7 @@ const Equipment = () => {
                 placeholder="Your Name"
                 value={enquiryData.name}
                 onChange={(e) => setEnquiryData({...enquiryData, name: e.target.value})}
-                className="w-full px-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-proto-cyan focus:border-transparent"
+                className="w-full px-3 md:px-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-proto-cyan focus:border-transparent"
                 required
               />
               <input
@@ -245,7 +246,7 @@ const Equipment = () => {
                 placeholder="Your Phone Number"
                 value={enquiryData.phone}
                 onChange={(e) => setEnquiryData({...enquiryData, phone: e.target.value})}
-                className="w-full px-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-proto-cyan focus:border-transparent"
+                className="w-full px-3 md:px-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-proto-cyan focus:border-transparent"
                 required
               />
               <input
@@ -253,20 +254,20 @@ const Equipment = () => {
                 placeholder="Required Equipment"
                 value={enquiryData.equipment}
                 onChange={(e) => setEnquiryData({...enquiryData, equipment: e.target.value})}
-                className="w-full px-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-proto-cyan focus:border-transparent"
+                className="w-full px-3 md:px-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-proto-cyan focus:border-transparent"
                 required
               />
               <textarea
                 placeholder="Additional Details"
                 value={enquiryData.requirement}
                 onChange={(e) => setEnquiryData({...enquiryData, requirement: e.target.value})}
-                className="w-full px-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-proto-cyan focus:border-transparent"
+                className="w-full px-3 md:px-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-proto-cyan focus:border-transparent"
                 rows={4}
                 required
               />
               <button 
                 type="submit"
-                className="w-full btn-primary bg-proto-orange hover:bg-opacity-90 py-3 rounded-lg font-medium"
+                className="w-full btn-primary bg-proto-orange hover:bg-opacity-90 py-2.5 md:py-3 rounded-lg font-medium transition-colors"
                 disabled={isSubmitting}
               >
                 {isSubmitting ? 'Sending...' : 'Send Enquiry'}

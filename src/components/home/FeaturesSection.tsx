@@ -13,26 +13,28 @@ const FeaturesSection: React.FC = () => {
           </p>
         </div>
 
-        {/* Added Collaboration Image */}
+        {/* Updated Collaboration Image with better responsive handling */}
         <div className="max-w-4xl mx-auto mb-16">
-          <div className="rounded-xl overflow-hidden shadow-lg">
+          <div className="relative w-full pb-[56.25%]">
             <img 
               src={collabImage}
               alt="Collaboration at Protobots" 
-              className="w-full h-[300px] object-cover"
+              className="absolute inset-0 w-full h-full object-contain rounded-xl shadow-lg"
             />
           </div>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
-          {/* Feature Image */}
+          {/* Feature Image with consistent sizing */}
           <div className="relative">
             <div className="rounded-xl overflow-hidden shadow-2xl">
-              <img 
-                src={scorpionBot}
-                alt="Scorpion Robot at Protobots workspace" 
-                className="w-full h-[400px] object-cover"
-              />
+              <div className="relative w-full pb-[75%]">
+                <img 
+                  src={scorpionBot}
+                  alt="Scorpion Robot at Protobots workspace" 
+                  className="absolute inset-0 w-full h-full object-cover"
+                />
+              </div>
             </div>
             <div className="absolute -bottom-6 -right-6 bg-proto-orange rounded-xl p-4 shadow-lg hidden md:block">
               <p className="text-white font-bold text-xl">Innovation Hub</p>

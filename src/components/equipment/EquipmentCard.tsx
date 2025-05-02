@@ -12,6 +12,7 @@ import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
 import { Label } from '@/components/ui/label';
+import { Card, CardHeader, CardTitle, CardContent, CardFooter } from '@/components/ui/card';
 
 interface EquipmentCardProps {
   id: string;
@@ -72,25 +73,36 @@ const EquipmentCard: React.FC<EquipmentCardProps> = ({
     });
   };
 
+  const handleEnquire = (equipmentName: string) => {
+    setIsDialogOpen(true);
+  };
+
   return (
     <>
-      <div className="equipment-card flex flex-col">
-        <div className="h-48 overflow-hidden rounded-lg mb-4">
+      <Card className="overflow-hidden hover:shadow-lg transition-shadow duration-300">
+        <div className="relative w-full pb-[75%]">
           <img 
             src={image} 
-            alt={name} 
-            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+            alt={name}
+            className="absolute inset-0 w-full h-full object-cover"
+            loading="lazy"
           />
         </div>
-        <h3 className="text-lg font-bold mb-2">{name}</h3>
-        <p className="text-gray-600 text-sm mb-4 flex-grow">{description}</p>
-        <button
-          onClick={() => setIsDialogOpen(true)}
-          className="btn-outline text-sm w-full"
-        >
-          Rent/Buy
-        </button>
-      </div>
+        <CardHeader>
+          <CardTitle className="text-lg md:text-xl">{name}</CardTitle>
+        </CardHeader>
+        <CardContent>
+          <p className="text-sm md:text-base text-gray-600">{description}</p>
+        </CardContent>
+        <CardFooter>
+          <Button 
+            className="w-full bg-proto-cyan hover:bg-opacity-90"
+            onClick={() => handleEnquire(name)}
+          >
+            Enquire Now
+          </Button>
+        </CardFooter>
+      </Card>
 
       <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
         <DialogContent className="sm:max-w-[425px]">

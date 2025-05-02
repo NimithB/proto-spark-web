@@ -97,13 +97,16 @@ const About = () => {
               </p>
             </div>
 
+            {/* Updated Image Section */}
             <div className="order-1 lg:order-2">
-              <div className="relative">
-                <img 
-                  src={aboutHeroImage} 
-                  alt="Robot at Protobots" 
-                  className="rounded-xl shadow-xl w-full h-auto"
-                />
+              <div className="relative w-full">
+                <div className="relative w-full pb-[75%]">
+                  <img 
+                    src={aboutHeroImage} 
+                    alt="Robot at Protobots" 
+                    className="absolute inset-0 w-full h-full object-cover rounded-xl shadow-xl"
+                  />
+                </div>
                 <div className="absolute -bottom-5 -right-5 bg-proto-cyan rounded-lg p-4 shadow-lg hidden md:block">
                   <p className="text-white font-medium">Innovation in action</p>
                 </div>
@@ -113,7 +116,7 @@ const About = () => {
         </div>
       </section>
 
-      {/* Team Section */}
+      {/* Team Section - Updated image handling */}
       <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-4 md:px-6">
           <div className="text-center max-w-3xl mx-auto mb-12">
@@ -129,11 +132,12 @@ const About = () => {
                 key={index} 
                 className="bg-white rounded-xl shadow-lg overflow-hidden transition-transform duration-300 hover:-translate-y-1"
               >
-                <div className="h-64 overflow-hidden">
+                <div className="relative w-full pb-[100%]">
                   <img 
                     src={member.image} 
                     alt={member.name} 
-                    className="w-full h-full object-cover"
+                    className="absolute inset-0 w-full h-full object-cover"
+                    loading="lazy"
                   />
                 </div>
                 <div className="p-6">
