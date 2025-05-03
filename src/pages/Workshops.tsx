@@ -57,6 +57,33 @@ const handleEnquire = (workshop: any) => {
   window.open(`https://wa.me/918904688500?text=${encodedMessage}`, '_blank');
 };
 
+const WorkshopCard = ({ workshop }: { workshop: typeof upcomingWorkshops[0] }) => (
+  <Card className="overflow-hidden hover:shadow-lg transition-shadow duration-300 flex flex-col">
+    <div className="relative w-full pb-[66.67%]">
+      <img 
+        src={workshop.image} 
+        alt={workshop.title}
+        className="absolute inset-0 w-full h-full object-cover transition-transform duration-300 hover:scale-105"
+        loading="lazy"
+      />
+    </div>
+    <CardHeader>
+      <CardTitle className="text-lg md:text-xl">{workshop.title}</CardTitle>
+    </CardHeader>
+    <CardContent className="flex-grow">
+      <p className="text-gray-600 text-sm md:text-base">{workshop.description}</p>
+    </CardContent>
+    <CardFooter>
+      <Button 
+        className="w-full bg-proto-cyan hover:bg-opacity-90"
+        onClick={() => handleEnquire(workshop)}
+      >
+        Enquire Now
+      </Button>
+    </CardFooter>
+  </Card>
+);
+
 const Workshops = () => {
   return (
     <Layout>
@@ -73,11 +100,11 @@ const Workshops = () => {
       </section>
 
       {/* Workshop Listings */}
-      <section className="py-16">
+      <section className="py-12 md:py-16">
         <div className="container mx-auto px-4 md:px-6">
-          <Tabs defaultValue="all" className="mb-8">
-            <div className="flex justify-center mb-6">
-              <TabsList>
+          <Tabs defaultValue="all" className="mb-6 md:mb-8">
+            <div className="flex justify-center mb-4 md:mb-6 overflow-x-auto">
+              <TabsList className="flex-wrap justify-center">
                 <TabsTrigger value="all">All Workshops</TabsTrigger>
                 <TabsTrigger value="robotics">Robotics</TabsTrigger>
                 <TabsTrigger value="electronics">Electronics</TabsTrigger>
@@ -86,127 +113,39 @@ const Workshops = () => {
             </div>
 
             <TabsContent value="all" className="mt-0">
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
                 {upcomingWorkshops.map((workshop) => (
-                  <Card key={workshop.id} className="overflow-hidden hover:shadow-lg transition-shadow duration-300">
-                    <div className="h-48 overflow-hidden">
-                      <img 
-                        src={workshop.image} 
-                        alt={workshop.title}
-                        className="w-full h-full object-cover"
-                      />
-                    </div>
-                    <CardHeader>
-                      <CardTitle>{workshop.title}</CardTitle>
-                    </CardHeader>
-                    <CardContent>
-                      <p>{workshop.description}</p>
-                    </CardContent>
-                    <CardFooter>
-                      <Button 
-                        className="w-full bg-proto-cyan hover:bg-opacity-90"
-                        onClick={() => handleEnquire(workshop)}
-                      >
-                        Enquire Now
-                      </Button>
-                    </CardFooter>
-                  </Card>
+                  <WorkshopCard key={workshop.id} workshop={workshop} />
                 ))}
               </div>
             </TabsContent>
 
             <TabsContent value="robotics" className="mt-0">
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
                 {upcomingWorkshops
                   .filter(workshop => workshop.category === 'robotics')
                   .map((workshop) => (
-                    <Card key={workshop.id} className="overflow-hidden hover:shadow-lg transition-shadow duration-300">
-                      <div className="h-48 overflow-hidden">
-                        <img 
-                          src={workshop.image} 
-                          alt={workshop.title}
-                          className="w-full h-full object-cover"
-                        />
-                      </div>
-                      <CardHeader>
-                        <CardTitle>{workshop.title}</CardTitle>
-                      </CardHeader>
-                      <CardContent>
-                        <p>{workshop.description}</p>
-                      </CardContent>
-                      <CardFooter>
-                        <Button 
-                          className="w-full bg-proto-cyan hover:bg-opacity-90"
-                          onClick={() => handleEnquire(workshop)}
-                        >
-                          Enquire Now
-                        </Button>
-                      </CardFooter>
-                    </Card>
+                    <WorkshopCard key={workshop.id} workshop={workshop} />
                   ))}
               </div>
             </TabsContent>
 
             <TabsContent value="electronics" className="mt-0">
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
                 {upcomingWorkshops
                   .filter(workshop => workshop.category === 'electronics')
                   .map((workshop) => (
-                    <Card key={workshop.id} className="overflow-hidden hover:shadow-lg transition-shadow duration-300">
-                      <div className="h-48 overflow-hidden">
-                        <img 
-                          src={workshop.image} 
-                          alt={workshop.title}
-                          className="w-full h-full object-cover"
-                        />
-                      </div>
-                      <CardHeader>
-                        <CardTitle>{workshop.title}</CardTitle>
-                      </CardHeader>
-                      <CardContent>
-                        <p>{workshop.description}</p>
-                      </CardContent>
-                      <CardFooter>
-                        <Button 
-                          className="w-full bg-proto-cyan hover:bg-opacity-90"
-                          onClick={() => handleEnquire(workshop)}
-                        >
-                          Enquire Now
-                        </Button>
-                      </CardFooter>
-                    </Card>
+                    <WorkshopCard key={workshop.id} workshop={workshop} />
                   ))}
               </div>
             </TabsContent>
 
             <TabsContent value="iot" className="mt-0">
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
                 {upcomingWorkshops
                   .filter(workshop => workshop.category === 'iot')
                   .map((workshop) => (
-                    <Card key={workshop.id} className="overflow-hidden hover:shadow-lg transition-shadow duration-300">
-                      <div className="h-48 overflow-hidden">
-                        <img 
-                          src={workshop.image} 
-                          alt={workshop.title}
-                          className="w-full h-full object-cover"
-                        />
-                      </div>
-                      <CardHeader>
-                        <CardTitle>{workshop.title}</CardTitle>
-                      </CardHeader>
-                      <CardContent>
-                        <p>{workshop.description}</p>
-                      </CardContent>
-                      <CardFooter>
-                        <Button 
-                          className="w-full bg-proto-cyan hover:bg-opacity-90"
-                          onClick={() => handleEnquire(workshop)}
-                        >
-                          Enquire Now
-                        </Button>
-                      </CardFooter>
-                    </Card>
+                    <WorkshopCard key={workshop.id} workshop={workshop} />
                   ))}
               </div>
             </TabsContent>
