@@ -18,8 +18,6 @@ Proto Bots is a tech innovation hub based in Bangalore, focusing on robotics, el
 - Radix UI Components
 - React Router
 
-d
-```
 
 ## Contact
 
@@ -28,6 +26,4 @@ For inquiries:
 - Email: contact@protobots.in
 - Location: Bangalore, India
 
-## License
 
-[MIT](LICENSE)
