@@ -18,17 +18,7 @@ Proto Bots is a tech innovation hub based in Bangalore, focusing on robotics, el
 - Radix UI Components
 - React Router
 
-## Getting Started
-
-```bash
-# Install dependencies
-npm install
-
-# Run development server
-npm run dev
-
-# Build for production
-npm run build
+d
 ```
 
 ## Contact
